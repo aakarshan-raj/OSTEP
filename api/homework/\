@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(){
+
+  int rc = fork();
+
+  if(rc < 0){
+        printf("fork failed\n");
+   }
+  else if(rc == 0){
+      printf("in child process\n");
+      
+   }
+   else{
+      int cc = wait(NULL);
+      printf("in parent process\n");
+   } 
+
+}
